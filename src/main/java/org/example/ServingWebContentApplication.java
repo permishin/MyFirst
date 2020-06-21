@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ServingWebContentApplication {
-private String a = "ab";
+private String a = "abc";
     public static void main(String[] args) {
         SpringApplication.run(ServingWebContentApplication.class, args);
     }
