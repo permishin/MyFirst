@@ -64,6 +64,16 @@ import java.util.Optional;
             model.addAttribute("user", list);
             return "edit";
         }
+        @PostMapping ("/{id}/edit")
+    public String PostEdit(@PathVariable(value = "id") Long id, @RequestParam String company, @RequestParam String years, @RequestParam String position, @RequestParam String description, Model model ) {
+        User user = myFirstRepo.findById(id).orElseThrow();
+        user.setCompany(company);
+        user.setYears(years);
+        user.setPosition(position);
+        user.setDescription(description);
+        myFirstRepo.save(user);
+        return "redirect:/";
+    }
 
     }
 
