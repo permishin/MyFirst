@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.Optional;
-
 @Controller
 public class AboutController {
 
@@ -44,18 +41,6 @@ public class AboutController {
         Iterable<Skills> skills = skillsRepo.findAll();
         model.addAttribute("skills", skills);
         return "redirect:/about";
-    }
-
-    @GetMapping("/about/{id}")
-    public String editModal(@PathVariable(value = "id") Long id, Model model) {
-        if (!skillsRepo.existsById(id)) {
-            return "redirect:/";
-        }
-        Optional<Skills> editModal = skillsRepo.findById(id);
-        ArrayList<Skills> list = new ArrayList<>();
-        editModal.ifPresent(list::add);
-        model.addAttribute("editModal", list);
-        return "/about";
     }
 
 }
