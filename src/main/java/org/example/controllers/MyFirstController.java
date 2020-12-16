@@ -5,16 +5,20 @@ import org.example.repo.MyFirstRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
 @Controller
     public class MyFirstController {
-    @Autowired
 
+    @Autowired
     private MyFirstRepo myFirstRepo;
+
 
     @GetMapping("/")
     public String main(Model model) {
@@ -81,10 +85,7 @@ import java.util.Optional;
         return "redirect:/";
     }
 
-    @GetMapping("/about")
-    public String About(Model model) {
-        model.addAttribute("title", "Павел Ермишин");
-        return "about";
-    }
+
+
 }
 
