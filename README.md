@@ -114,6 +114,7 @@ ALTER TABLE `skills`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
   
+  или подгрузить готовую базу из корня проекта - my_first.sql
   
 3) Запустить сервер приложений из файла ServingWebContentApplication.java
 
